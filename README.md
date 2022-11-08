@@ -1,2 +1,2 @@
-<img src="CellMAPS_LOGO.jpg" align="center" alt="" width="1000"/> <br/>
+<img src="CellMAPS_LOGO.jpg" align="center" alt="" width="800"/> <br/>
 # CellMAPS <br/>
