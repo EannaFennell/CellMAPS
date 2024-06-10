@@ -56,7 +56,7 @@ In the modelling environment navigate to ```Hippoflow -> Setting -> CincoDeBio P
 
 You should see a form like the one below:
 
-[[ Insert Screenshot ]]
+<img src="Images/IP_Input.png" align="center" alt="" width="800"/> <br/>
 
 Next, enter in the IP address (which was displayed when the execution platform was installed. Don't included http(s)://, etc.. Only the IP address (i.e. 0.0.0.0)
 
