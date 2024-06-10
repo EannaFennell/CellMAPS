@@ -21,7 +21,7 @@ Download and install the below:
 
 #### Execution Platform (Windows 10/11)
 
-Download the [powershell script](https://raw.githubusercontent.com/colm-brandon-ul/cdb-wsl-install/master/windows-wsl/deploy.ps1) which install the execution platform and it's dependencies.
+Download the [powershell script](https://github.com/EannaFennell/CellMAPS/blob/main/windows-wsl/deploy.ps1) which install the execution platform and it's dependencies.
 
 Navigate to the folder which the powershell script was downloaded to, right click on the file and select the option 'Run with powershell as Admin'. If that option isn't present find the Powershell icon in the Windows menu, right click on it and select the option Run as administrator. Navigate to the folder the powershell script has been downloaded too with command cd <path/to/folder> replacing <path/to/folder> with the actual path folder on your machine. Finally run the command ```.\deploy.ps1```. (Note: If this fails run the command ```Set-ExecutionPolicy RemoteSigned``` then re-run the script using ```.\deploy.ps1```). <br />
 
@@ -33,7 +33,7 @@ Next the script will install microk8s. Note: By default WSL2 is deployed on the 
 
 Finally the CellMAPS services will be deployed on the cluster. <br />
 
-*The IP address for the cluster will be printed*. Please note this down as you will need to add it to the CellMAPS modelling environment so the modelling and execution environments can communicate with each other. The url to access to data-upload portal will also be printed.
+*The IP address for the cluster will be printed*. Please note this down as you will need to add it to the CellMAPS modelling environment so the modelling and execution environments can communicate with each other. The url to access to data-upload portal will also be printed. <br />
 
 #### Modelling Environment (Windows 10/11)
 
@@ -41,16 +41,44 @@ Download the [application](https://sourceforge.net/projects/cincodebio/files/ime
 
 **Note**: Windows places restrictions on the maximum path length, therefore we recommending moving the zip file to the root directory ( C:/) before unzipping it, to avoid these errors.
 
-#### Configure Java Virtual Machine (If Necessary)
+To finish, go to *Configure Java Virtual Machine (If Necessary)* and *Add Execution Platform IP address to IME Preferences* below.
+
+### MacOS
+
+#### Execution Platform (MacOS)
+
+Download the [bash script](https://github.com/EannaFennell/CellMAPS/blob/main/macos/deploy.sh) which installs the execution platform and it's dependencies. <br />
+
+To run the script open *Terminal* and run ```bash <path-to-script>/deploy.sh``` replacing ```<path-to-script>``` with the directory you saved the script to. <br />
+
+You will first be prompted to enter your DockerHub Username followed by your DockerHub Password (ensure these are correct as deployment will fail otherwise). <br />
+
+Next you will be asked the resources you wish to allocate to the execution platform; Number of CPU cores, GB of RAM and GB of Storage. <br />
+
+The script will now check if you have Homebrew installed on your machine, if Homebrew is not installed, it will be installed for you (you may need to enter your system password as a part of the install process). <br />
+
+Next the script will check if you have Multipass installed on your machine, if not it will be installed for you (you may need to enter your system password as a part of the install process). <br />
+
+Next the script will install microk8s. It will deploy a VM called microk8s-vm in Mutlipass and deploy then Microk8s cluster, then wait for it to start up. Once the cluster has started, the various addons and configurations required for running the CdB execution platform will be deployed on the cluster. The cluster will then be restarted. <br />
+
+Finally the CellMAPS services will be deployed on the cluster. <br />
+
+*The IP address for the cluster will be printed*. Please note this down as you will need to add it to the CellMAPS modelling environment so the modelling and execution environments can communicate with each other. The url to access to data-upload portal will also be printed. <br />
+
+#### Modelling Environment (MacOS)
+
+Download the (https://sourceforge.net/projects/cincodebio/files/ime.macosx.x86_64.zip/download) and unzip it.
+
+### Configure Java Virtual Machine (If Necessary)
 
 The modelling environment requires Java 11 to be installed to on your machine to work. If you do not have a Java 11 already on your machine (and configured on your path) follow these instructions:
 
   1. Head to the [Temurin](https://adoptium.net/en-GB/temurin/releases/?version=11&package=jdk&os=windows&arch=any) website and select options from the dropdown for 'Architecture' to match your system (x64 for 64 bit Windows Systems).
   2. Download the JDK (.zip version), unzip it and rename the unzipped folder jre.
-  3. Find the folder for the modelling environment, it should be named something like ```HippoFlowTool-1.202405081710```. Open it.
-  4. Move/Copy the extracted jre folder (from step 2) into the ```HippoFlowTool-1.202405081710``` folder.
+  3. Find the folder for the modelling environment, it should be named something like ```HippoFlowTool-1.202405081710```. Open it. 
+  4. Move/Copy the extracted jre folder (from step 2) into the ```HippoFlowTool-1.202405081710``` folder. If using MacOS, move/copy the folder into the ```Eclipse``` subfolder.
 
-#### Add Execution Platform IP address to IME Preferences
+### Add Execution Platform IP address to IME Preferences
 
 In the modelling environment navigate to ```Hippoflow -> Setting -> CincoDeBio Preferences``` in the menu.
 
@@ -63,3 +91,57 @@ Next, enter in the IP address (which was displayed when the execution platform w
 Hit **Apply and Close**.
 
 Finally hit the ```Refresh CdB SIBs``` button on the top toolbar, this will synchronise the SIB palette with the set of SIBs available on the execution platform.
+
+## Processes
+
+CellMAPS includes both image processing and single-cell spatial analyses (see below). An in-depth description of these capabilities are available in our [preprint](https://www.biorxiv.org/). Here, we will give a brief description of the capabilities as well as input and output data requirements.
+
+<img src="Images/HIPPo_MISSILe Schematic v5.png" alt="" width="500" align="center" /> <br/>
+
+### Image processing
+
+#### De-array
+
+To de-array tissue microarray (TMA) slides, we have developed SegArray. Upon data upload, the user will select that the input image is a TMA. SegArray will predict several segmentation masks to identify the cores in the TMA. The user can then inspect the result, select the best prediction and adjust any of the masks (in case of missing/false core predictions).
+
+#### Equalisation
+
+ACE (Automatic Contrast Equalisation) is a equalisation technique, developed as part of CellMAPS, that corrects images with low contrast to achieve greater signal to noise ratios for low expressing antigens or poor performing antibodies. It also helps to normalise expression profiles across different formalin-fixed paraffin embedded (FFPE) samples.
+
+#### Cell Segmentation & Feature Extraction
+
+CellMAPS generates pseudo-membrane markers, combining multiple markers that the user inputs. From there, the user can select DeepCell, CellPose or CellSeg segmentation. Segmentation masks are saved and available for inspection and used downstream for feature extration. Feature-cell matrices are saved at this point and further analysis can be completed within CellMAPS or can be exported for analysis with third party packages.
+
+### Analysis & Plotting
+
+Downstream spatial analysis such as clustering (with PhenoGraph), neighbourhood analysis, microenvironment analysis, distance analysis and the corresponding plots can also be performed as part of CellMAPS.
+
+## Running CellMAPS
+
+We will run an example using the test data set supplied in the [data](https://github.com/EannaFennell/CellMAPS/Data/) folder to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
+
+### Designing a workflow
+
+*Image of interface*
+
+How to design a workflow with the modelling environment
+
+### Uploading data and running a workflow
+
+On the CellMAPS interface, select 'Data Upload' on the top.
+
+*Image of interface*
+
+Next, select if the slide to be analysed is a TMA or FF section and enter an experiment ID. The experiment ID has no bearing on the output, it is for you to keep track of different experiments. For example, CRC-TMA-01. 
+
+*Image of interface*
+
+Next, select Browse under the 'Image' field and select the tiff image to analyse. Finally for the 'Marker File' select browse and select the .txt file that stores the protein information for each stack in the corresponding tiff file. The format must be like the below.
+
+*Image of text file*
+
+Select 'Upload' to upload all the necessary data.
+
+### Expected output
+
+For this example, the plot of the Pan-Cytokeratin spatial expression should look like the below. It should take ~5 minutes to complete on a standard desktop/laptop.
