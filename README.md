@@ -5,7 +5,7 @@ CellMAPS (Single-**Cell** **M**odel-based **A**nalysis **P**ipeline for **S**pat
 ## Installation
 
 At the moment, to use CellMAPS, both the modelling and execution environments must be downloaded and installed. We are currently working on merging the execution platform with [Cinco Cloud](https://link.springer.com/chapter/10.1007/978-3-031-19756-7_23) (a Kubernetes native Application) so in future versions the entire platform (modelling and execution platforms) will be combined and deployed together. <br /> <br />
-Currently all the workflow modules for CellMAPS are stored on a public [docker hub](https://www.docker.com/products/docker-hub/) repository. In order to avoid rate limiting, the install will request valid a valid dockerhub account (username & password) which can be created [here](https://hub.docker.com/signup). 
+Currently all the workflow modules for CellMAPS are stored on a public [docker hub](https://www.docker.com/products/docker-hub/) repository. In order to avoid rate limiting, the install will request valid a valid dockerhub account (username & password) which can be created [here](https://hub.docker.com/signup). In total, installation should take ~15 minutes to complete on a standard desktop/laptop.
 
 ### Windows 10/11
 
@@ -145,3 +145,28 @@ Select 'Upload' to upload all the necessary data.
 ### Expected output
 
 For this example, the plot of the Pan-Cytokeratin spatial expression should look like the below. It should take ~5 minutes to complete on a standard desktop/laptop.
+
+## Hardware tested on
+
+CellMAPS installation was tested on
+* Macbook Pro 14"
+  - Storage: SSD
+  - RAM: 16GB LPDDR5
+  - OS: 14.1.2 (23B92)
+  - CPU: Apple M1 Pro
+  - Software dependencies:
+    - Multipass v1.13.1
+    - Microk8s v.2.3.4
+* Dell Precision 3660
+  - Storage: SSD/HDD
+  - RAM: 64GB
+  - OS: Windows 10
+  - CPU: Intel i9
+  - GPU: Nvidia 3090
+* Dell Precision 5820 Tower
+  - Storage: SSD/HDD
+  - RAM: 128GB
+  - OS: Windows 10 Pro
+  - CPU: Intel(R) Xeon(R) 1-225 CPU
+  - GPU: Nvidia Quadro RTX 5000
+
