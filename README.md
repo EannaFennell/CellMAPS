@@ -67,7 +67,7 @@ Finally the CellMAPS services will be deployed on the cluster. <br />
 
 #### Modelling Environment (MacOS)
 
-Download the (https://sourceforge.net/projects/cincodebio/files/ime.macosx.x86_64.zip/download) and unzip it.
+Download the [application](https://sourceforge.net/projects/cincodebio/files/ime.macosx.x86_64.zip/download) and unzip it.
 
 ### Configure Java Virtual Machine (If Necessary)
 
@@ -122,7 +122,7 @@ We will run an example using the test data set supplied in the [data](https://gi
 
 ### Designing a workflow
 
-*Image of interface*
+<img src="Images/overview_eclipse.PNG" align="center" alt="" width="600"/> <br/>
 
 How to design a workflow with the modelling environment
 
@@ -140,7 +140,7 @@ Select 'Upload' to upload all the necessary data.
 
 ### Tracking progress of the workflow
 
-Tracking progress of workflow
+To track the progress of the analysis workflow ... 
 
 ### Expected output
 
