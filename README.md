@@ -118,7 +118,7 @@ Downstream spatial analysis such as clustering (with PhenoGraph), neighbourhood 
 
 ## Running CellMAPS
 
-We will run an example using the test data set supplied in the [data](https://github.com/EannaFennell/CellMAPS/Data/) folder to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
+We will run an example using the test data set supplied in the [data](https://github.com/EannaFennell/CellMAPS/tree/main/Data) folder to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
 
 ### Designing a workflow
 
@@ -145,6 +145,8 @@ Select 'Upload' to upload all the necessary data.
 ### Expected output
 
 For this example, the plot of the Pan-Cytokeratin spatial expression should look like the below. It should take ~5 minutes to complete on a standard desktop/laptop.
+
+<img src="Images/pan-ck_exp.PNG" align="center" alt="" width="800"/> <br/>
 
 ## Hardware tested on
 
