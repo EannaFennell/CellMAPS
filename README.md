@@ -13,6 +13,8 @@ Currently all the workflow modules for CellMAPS are stored on a public [docker h
 
 Download and install the below:
 * [Microk8s](https://microk8s.io/): The Kubernetes native application is deployed on a Microk8s cluster. Download the Windows version [here](https://microk8s.io/#install-microk8s). <br />
+  - Make sure to add microk8s and kubectl to the path during installation.
+  - During the installation process, step 3 requires you to open the command prompt and input ```microk8s status --wait-ready```. If you  get the following error here ```sudo: microk8s.status: command not found. An error occurred when trying to execute 'sudo microk8s.status --wait-ready' with 'multipass': returned exit code 1``` then run the following in command prompt: ```multipass exec microk8s-vm -- sudo snap install microk8s --classic```
 * Windows Subsystem for Linux (WSL) 2
   - The microk8s cluster is deployed with-in an Ubuntu-22.04 LTS instance running with-in WSL2
   - By default WSL enables a maximum of the 50% of the system RAM to be used (this can be changed be editing the .wslconfig file if needed)
