@@ -122,9 +122,11 @@ We will run an example using the test data set supplied in the [data](https://gi
 
 ### Designing a workflow
 
+Designing workflows for CellMAPS is currently done in the modelling environment which looks like the below.
+
 <img src="Images/overview_eclipse.PNG" align="center" alt="" width="800"/> <br/>
 
-How to design a workflow with the modelling environment
+Each box represents a process (e.g. tissue de-arraying, etc.), with inputs (in orange) and outputs (in green). To design a workflow, you must drag processes from the left hand side menu under ```myProject -> Lib.sibs``` into the worksheet. From there, you must connect the boxes together with the large arrows which can be done by hovering over the name in the box, until an arrow appears and then dragging that arrow to the name on the subsequent box. Subsequently, the inputs and outputs must be connected. For this, drag lines between the inputs and outputs which share the same name on adjacent boxes. Although lines can be drawn between any boxes, data checking will ensure only processes which can be ran sequentially are joined. Nonetheless, for ease of use, pre-designed workflows are available to use.
 
 ### Uploading data and running a workflow
 
