@@ -134,19 +134,19 @@ On the CellMAPS interface, select 'Data Upload' on the top.
 
 Next, select if the slide to be analysed is a TMA or FF section and enter an experiment ID. The experiment ID has no bearing on the output, it is for you to keep track of different experiments. For example, CRC-TMA-01. 
 
-*Image of interface*
-
-Next, select Browse under the 'Image' field and select the tiff image to analyse. Finally for the 'Marker File' select browse and select the .txt file that stores the protein information for each stack in the corresponding tiff file. The format must be like the below.
-
-*Image of text file*
+Next, select Browse under the 'Image' field and select the tiff image to analyse. Finally for the 'Marker File' select browse and select the .txt file that stores the protein information for each stack in the corresponding tiff file (example found [here](https://github.com/EannaFennell/CellMAPS/blob/main/Data/MarkerList.txt)).
 
 Select 'Upload' to upload all the necessary data.
+
+### Tracking progress of the workflow
+
+Tracking progress of workflow
 
 ### Expected output
 
 For this example, the plot of the Pan-Cytokeratin spatial expression should look like the below. It should take ~5 minutes to complete on a standard desktop/laptop.
 
-<img src="Images/pan-ck_exp.PNG" align="center" alt="" width="800"/> <br/>
+<img src="Images/pan-ck_exp.PNG" align="center" alt="" width="600"/> <br/>
 
 ## Hardware tested on
 
