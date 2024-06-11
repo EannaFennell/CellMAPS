@@ -122,7 +122,7 @@ We will run an example using the test data set supplied in the [data](https://gi
 
 ### Designing a workflow
 
-<img src="Images/overview_eclipse.PNG" align="center" alt="" width="600"/> <br/>
+<img src="Images/overview_eclipse.PNG" align="center" alt="" width="800"/> <br/>
 
 How to design a workflow with the modelling environment
 
