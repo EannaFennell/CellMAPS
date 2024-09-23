@@ -138,7 +138,7 @@ Next, create a workflow by right clicking on the project, then ```New``` and the
 
 Designing workflows for CellMAPS is currently done in the modelling environment which looks like the below.
 
-<img src="Images/overview_eclipse.PNG" align="center" alt="" width="800"/> <br/>
+<img src="Images/overview_eclipse.PNG" align="center" alt="" width="500"/> <br/>
 
 Each box represents a process (e.g. tissue de-arraying, etc.), with inputs (in orange) and outputs (in green). To design a workflow, you must drag processes from the left hand side menu under ```myProject -> Lib.sibs``` into the worksheet. From there, you must connect the boxes together with the large arrows which can be done by hovering over the name in the box, until an arrow appears and then dragging that arrow to the name on the subsequent box. Subsequently, the inputs and outputs must be connected. For this, drag lines between the inputs and outputs which share the same name on adjacent boxes. Although lines can be drawn between any boxes, data checking will ensure only processes which can be ran sequentially are joined. Nonetheless, for ease of use, pre-designed workflows are available to use. 
 
@@ -156,7 +156,7 @@ Select 'Upload' to upload all the necessary data.
 
 Back in the Execution environment, save the current workflow. In the model validation on the bottom left, all checks must be passed. Otherwise, there is an error in the flow logic (i.e. steps are not in sequential order). Next, select ```Generate code from a Graphmodel``` which looks like the below.
 
-<img src="Images/generate_code.PNG" align="center" alt="" width="800"/> <br/>
+<img src="Images/generate_code.PNG" align="center" alt="" width="500"/> <br/>
 
 This will result in a URL being printed in the bottom window under ```CdB Submitted Workflow Executions```. If this window isn't there, go to ```Window -> Show View -> Other``` and select ```CdB Submitted Workflow Executions```.
 
