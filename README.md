@@ -132,6 +132,8 @@ After launching the Execution Platform, select ```Create a new project``` from t
 
 This should result in the Lib.sibs file filling with SIBs as below.
 
+<img src="Images/sibs.PNG" align="center" alt="" width="600"/> <br/>
+
 Next, create a workflow by right clicking on the project, then ```New``` and then ```New HippoFlow```.
 
 ### Designing a workflow
