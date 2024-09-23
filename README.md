@@ -124,13 +124,13 @@ We will run an example using the test data set supplied in the [data](https://gi
 
 ### Setting up a project
 
-We have provided a full project in the Gitu=hub directory which would only need the SIB refreshing below. However, if you want to start your own workflow from scratch, follow the below fully.
+We have provided a full project in the Github directory which would only need the SIB refreshing below. However, if you want to start your own workflow from scratch, follow the below fully.
 
-After launching the Execution Platform, select "Create a new project" from the "Project Explorer" in the top left of the window and name it accordingly. Next, right click on the project and select "Create SIBs Library", making sure to name the library "Lib.sibs". Then on the toolbar, hit the "Refresh Cdb SIBs" which looks like the below.
+After launching the Execution Platform, select ```Create a new project``` from the ```Project Explorer``` in the top left of the window and name it accordingly. Next, right click on the project and select "Create SIBs Library", making sure to name the library ```Lib.sibs```. Then on the toolbar, hit the ```Refresh Cdb SIBs``` which looks like the below.
 
 This should result in the Lib.sibs file filling with SIBs as below.
 
-Next, create a workflow by right clicking on the project, then "New" and then "New HippoFlow".
+Next, create a workflow by right clicking on the project, then ```New``` and then ```New HippoFlow```.
 
 ### Designing a workflow
 
@@ -155,11 +155,11 @@ Select 'Upload' to upload all the necessary data.
 Back in the Execution environment, save the current workflow. In the model validation on the bottom left, all checks must be passed. Otherwise, there is an error in the flow logic (i.e. steps are not in sequential order). Next, select "Generate code from a Graphmodel" which looks like the below.
 
 
-This will result in a URL being printed in the bottom window under "CdB Submitted Workflow Executions". If this window isn't there, go to "Window -> Show View -> Other" and select "CdB Submitted Workflow Executions".
+This will result in a URL being printed in the bottom window under ```CdB Submitted Workflow Executions```. If this window isn't there, go to ```Window -> Show View -> Other``` and select ```CdB Submitted Workflow Executions```.
 
 ### Tracking progress of the workflow
 
-To track the progress of the analysis workflow select the new URL in "CdB Submitted Workflow Executions". The link will take you back to the CellMAPS interface where each step of the process will be detailed and in some cases require user input.
+To track the progress of the analysis workflow select the new URL in ```CdB Submitted Workflow Executions```. The link will take you back to the CellMAPS interface where each step of the process will be detailed and in some cases require user input.
 
 ### Expected output
 
