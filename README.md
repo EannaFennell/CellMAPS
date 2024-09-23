@@ -82,7 +82,7 @@ The modelling environment requires Java 11 to be installed to on your machine to
 
 ### Add Execution Platform IP address to IME Preferences
 
-In the modelling environment navigate to ```Hippoflow -> Setting -> CincoDeBio Preferences``` in the menu.
+In the modelling environment navigate to ```Hippoflow -> Window -> Preferences -> CincoDeBio Preferences``` in the menu.
 
 You should see a form like the one below:
 
@@ -122,13 +122,23 @@ Downstream spatial analysis such as clustering (with PhenoGraph), neighbourhood 
 
 We will run an example using the test data set supplied in the [data](https://github.com/EannaFennell/CellMAPS/tree/main/Data) folder to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
 
+### Setting up a project
+
+We have provided a full project in the Gitu=hub directory which would only need the SIB refreshing below. However, if you want to start your own workflow from scratch, follow the below fully.
+
+After launching the Execution Platform, select "Create a new project" from the "Project Explorer" in the top left of the window and name it accordingly. Next, right click on the project and select "Create SIBs Library", making sure to name the library "Lib.sibs". Then on the toolbar, hit the "Refresh Cdb SIBs" which looks like the below.
+
+This should result in the Lib.sibs file filling with SIBs as below.
+
+Next, create a workflow by right clicking on the project, then "New" and then "New HippoFlow".
+
 ### Designing a workflow
 
 Designing workflows for CellMAPS is currently done in the modelling environment which looks like the below.
 
 <img src="Images/overview_eclipse.PNG" align="center" alt="" width="800"/> <br/>
 
-Each box represents a process (e.g. tissue de-arraying, etc.), with inputs (in orange) and outputs (in green). To design a workflow, you must drag processes from the left hand side menu under ```myProject -> Lib.sibs``` into the worksheet. From there, you must connect the boxes together with the large arrows which can be done by hovering over the name in the box, until an arrow appears and then dragging that arrow to the name on the subsequent box. Subsequently, the inputs and outputs must be connected. For this, drag lines between the inputs and outputs which share the same name on adjacent boxes. Although lines can be drawn between any boxes, data checking will ensure only processes which can be ran sequentially are joined. Nonetheless, for ease of use, pre-designed workflows are available to use.
+Each box represents a process (e.g. tissue de-arraying, etc.), with inputs (in orange) and outputs (in green). To design a workflow, you must drag processes from the left hand side menu under ```myProject -> Lib.sibs``` into the worksheet. From there, you must connect the boxes together with the large arrows which can be done by hovering over the name in the box, until an arrow appears and then dragging that arrow to the name on the subsequent box. Subsequently, the inputs and outputs must be connected. For this, drag lines between the inputs and outputs which share the same name on adjacent boxes. Although lines can be drawn between any boxes, data checking will ensure only processes which can be ran sequentially are joined. Nonetheless, for ease of use, pre-designed workflows are available to use. 
 
 ### Uploading data and running a workflow
 
@@ -142,9 +152,14 @@ Next, select Browse under the 'Image' field and select the tiff image to analyse
 
 Select 'Upload' to upload all the necessary data.
 
+Back in the Execution environment, save the current workflow. In the model validation on the bottom left, all checks must be passed. Otherwise, there is an error in the flow logic (i.e. steps are not in sequential order). Next, select "Generate code from a Graphmodel" which looks like the below.
+
+
+This will result in a URL being printed in the bottom window under "CdB Submitted Workflow Executions". If this window isn't there, go to "Window -> Show View -> Other" and select "CdB Submitted Workflow Executions".
+
 ### Tracking progress of the workflow
 
-To track the progress of the analysis workflow ... 
+To track the progress of the analysis workflow select the new URL in "CdB Submitted Workflow Executions". The link will take you back to the CellMAPS interface where each step of the process will be detailed and in some cases require user input.
 
 ### Expected output
 
