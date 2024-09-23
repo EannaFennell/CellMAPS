@@ -126,7 +126,9 @@ We will run an example using the test data set supplied in the [data](https://gi
 
 We have provided a full project in the Github directory which would only need the SIB refreshing below. However, if you want to start your own workflow from scratch, follow the below fully.
 
-After launching the Execution Platform, select ```Create a new project``` from the ```Project Explorer``` in the top left of the window and name it accordingly. Next, right click on the project and select "Create SIBs Library", making sure to name the library ```Lib.sibs```. Then on the toolbar, hit the ```Refresh Cdb SIBs``` which looks like the below.
+After launching the Execution Platform, select ```Create a new project``` from the ```Project Explorer``` in the top left of the window and name it accordingly. Next, right click on the project and select ```Create SIBs Library```, making sure to name the library ```Lib.sibs```. Then on the toolbar, hit the ```Refresh Cdb SIBs``` which looks like the below.
+
+<img src="Images/Cdb_sibs.PNG" align="center" alt="" width="800"/> <br/>
 
 This should result in the Lib.sibs file filling with SIBs as below.
 
@@ -144,7 +146,7 @@ Each box represents a process (e.g. tissue de-arraying, etc.), with inputs (in o
 
 On the CellMAPS interface, select 'Data Upload' on the top.
 
-*Image of interface*
+<img src="Images/cellmaps_app.PNG" align="center" alt="" width="800"/> <br/>
 
 Next, select if the slide to be analysed is a TMA or full face (FF) section and enter an experiment ID. The experiment ID has no bearing on the output, it is for you to keep track of different experiments. For example, CRC-TMA-01. 
 
@@ -152,8 +154,9 @@ Next, select Browse under the 'Image' field and select the tiff image to analyse
 
 Select 'Upload' to upload all the necessary data.
 
-Back in the Execution environment, save the current workflow. In the model validation on the bottom left, all checks must be passed. Otherwise, there is an error in the flow logic (i.e. steps are not in sequential order). Next, select "Generate code from a Graphmodel" which looks like the below.
+Back in the Execution environment, save the current workflow. In the model validation on the bottom left, all checks must be passed. Otherwise, there is an error in the flow logic (i.e. steps are not in sequential order). Next, select ```Generate code from a Graphmodel``` which looks like the below.
 
+<img src="Images/generate_code.PNG" align="center" alt="" width="800"/> <br/>
 
 This will result in a URL being printed in the bottom window under ```CdB Submitted Workflow Executions```. If this window isn't there, go to ```Window -> Show View -> Other``` and select ```CdB Submitted Workflow Executions```.
 
