@@ -128,11 +128,11 @@ We have provided a full project in the Github directory which would only need th
 
 After launching the Execution Platform, select ```Create a new project``` from the ```Project Explorer``` in the top left of the window and name it accordingly. Next, right click on the project and select ```Create SIBs Library```, making sure to name the library ```Lib.sibs```. Then on the toolbar, hit the ```Refresh Cdb SIBs``` which looks like the below.
 
-<img src="Images/Cdb_sibs.PNG" align="center" alt="" width="800"/> <br/>
+<img src="Images/Cdb_sibs.PNG" align="center" alt="" width="500"/> <br/>
 
 This should result in the Lib.sibs file filling with SIBs as below.
 
-<img src="Images/sibs.PNG" align="center" alt="" width="600"/> <br/>
+<img src="Images/sibs.PNG" align="center" alt="" width="400"/> <br/>
 
 Next, create a workflow by right clicking on the project, then ```New``` and then ```New HippoFlow```.
 
