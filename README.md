@@ -120,7 +120,7 @@ Downstream spatial analysis such as clustering (with PhenoGraph), neighbourhood 
 
 ## Running CellMAPS
 
-We will run an example using the test data set supplied in the [data](https://github.com/EannaFennell/CellMAPS/tree/main/Data) folder to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
+We will run an example using the test data set supplied [here](https://zenodo.org/records/13836803) to normalise, single-cell segment, extract features and plot the corresponding spatial expression of Pan-Cytokeratin.
 
 ### Setting up a project
 
