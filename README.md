@@ -4,6 +4,8 @@ CellMAPS (Single-**Cell** **M**odel-based **A**nalysis **P**ipeline for **S**pat
 
 ## Installation
 
+*** We are currently (Nov 27 2024) refactoring the architecture and hence this install method may fail over the next few days.
+
 At the moment, to use CellMAPS, both the modelling and execution environments must be downloaded and installed. We are currently working on merging the execution platform with [Cinco Cloud](https://link.springer.com/chapter/10.1007/978-3-031-19756-7_23) (a Kubernetes native Application) so in future versions the entire platform (modelling and execution platforms) will be combined and deployed together. <br /> <br />
 Currently all the workflow modules for CellMAPS are stored on a public [docker hub](https://www.docker.com/products/docker-hub/) repository. In order to avoid rate limiting, the install will request valid a valid dockerhub account (username & password) which can be created [here](https://hub.docker.com/signup). In total, installation should take ~15 minutes to complete on a standard desktop/laptop.
 
